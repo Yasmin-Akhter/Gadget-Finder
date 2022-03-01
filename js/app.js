@@ -41,16 +41,16 @@ const showDetailsInner = items => {
     console.log(items);
     const details = document.getElementById('details');
     const div = document.createElement('div');
+    div.classList.add('card');
     div.innerHTML = `
-        <div class="card" style="width: 18rem;">
+       
             <img src="${items.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${items.name}</h5>
-                    <h5 class="card-text">Release Date:${items.releaseDate}</h5>
-                    <h5 class="card-text">Release Date:${items.releaseDate}</h5>
+                    <p class="card-text"><span>Release Date:</span>${items.releaseDate}</p>
                     
                 </div>
-        </div>
+        
         `;
     details.appendChild(div);
 }
