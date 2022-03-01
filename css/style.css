@@ -1,0 +1,15 @@
+@font-face {
+    font-family: chopsic;
+    src: url("../fonts/chopsic/Chopsic.otf");
+  }
+  .my-title{
+      font-family: chopsic,sans-serif;
+      color: white;
+
+  }
+.navbar{
+    background-color:brown
+}
+.input-style{
+    border: 1px solid brown;
+}
