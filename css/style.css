@@ -8,8 +8,10 @@
 
   }
 .navbar{
-    background-color:brown
+    background-color:burlywood
 }
-.input-style{
-    border: 1px solid brown;
+.search-input-style{
+   background-color: rgb(63, 36, 36);
+   color: white;
+  
 }
