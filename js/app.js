@@ -64,7 +64,7 @@ const showDetailsInner = items => {
                     <li class="list-group-item">Storage: ${items.mainFeatures.storage}</li>
                     <li class="list-group-item">Chip Set: ${items.mainFeatures.chipSet}</li>
                     <li class="list-group-item">Sensors: ${items.mainFeatures.sensors.slice(0, 7)}</li>
-                    <li class="list-group-item">Bluetooth: ${items.others.Bluetooth}</li>
+                    <li class="list-group-item">Bluetooth: ${items.others?.Bluetooth}</li>
                 </ul>
                 
             </div>

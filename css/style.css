@@ -2,14 +2,19 @@
     font-family: chopsic;
     src: url("../fonts/chopsic/Chopsic.otf");
   }
+ .my-style{
+    background-color:burlywood;
+  }
   .my-title{
       font-family: chopsic,sans-serif;
       color: white;
 
   }
 .navbar{
-    background-color:burlywood
+    /* background-color:burlywood; */
+    border: 2px solid rgb(163, 130, 86);
 }
+
 .search-input-style{
    background-color: rgb(63, 36, 36);
    color: white;
