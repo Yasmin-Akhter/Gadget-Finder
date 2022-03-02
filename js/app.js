@@ -5,13 +5,20 @@ const loadPhone = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => showPhone(data.data))
+
+
 }
+
+
+
 const showPhone = names => {
-    //console.log(names);
+    console.log(names);
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = "";
-
-    names.forEach(name => {
+    if (names.length == 0) {
+        alert('Item not found');
+    }
+    names.slice(0, 20).forEach(name => {
         //console.log(name);
         const div = document.createElement('div');
         div.classList.add('col')
@@ -48,20 +55,22 @@ const showDetailsInner = items => {
 
     const div = document.createElement('div');
     div.classList.add('card');
-    div.innerHTML = `
-       
-            <img src="${items.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">${items.name}</h4>
-                    <p class="card-text"><span >Release Date: </span>${items.releaseDate ? items.releaseDate : 'No release date found'}</p>
-                    <p class="card-text"><span>Storage: </span>${items.mainFeatures.storage}</p>
-                    <p class="card-text"><span>Chip set: </span>${items.mainFeatures.chipSet}</p>
-                    <p class="card-text"><span>Sensors: </span>${items.mainFeatures.sensors.slice(0, 7)}</p>
-                    <p class="card-text"><span>Bluetooth: </span>${items.others.Bluetooth}</p>
-                    
-                </div>
-        
-        `;
+    div.innerHTML = `<div class="card mx-auto" style="width: 20rem;">
+        <img src="${items.image}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${items.name}</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Release Date: ${items.releaseDate ? items.releaseDate : 'Not found'}</li>
+                    <li class="list-group-item">Storage: ${items.mainFeatures.storage}</li>
+                    <li class="list-group-item">Chip Set: ${items.mainFeatures.chipSet}</li>
+                    <li class="list-group-item">Sensors: ${items.mainFeatures.sensors.slice(0, 7)}</li>
+                    <li class="list-group-item">Bluetooth: ${items.others.Bluetooth}</li>
+                </ul>
+                
+            </div>
+`;
+
+
     details.appendChild(div);
 }
 
