@@ -9,23 +9,27 @@ const loadPhone = () => {
 const showPhone = names => {
     //console.log(names);
     const searchResult = document.getElementById('search-result');
-    document.getElementById('search-result').innerText = "";
+    searchResult.textContent = "";
+
     names.forEach(name => {
         //console.log(name);
         const div = document.createElement('div');
         div.classList.add('col')
         div.innerHTML = `
-        <div class="card">
-            <img src="${name.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${name.phone_name}</h5>
-                    <p class="card-text">Brand: ${name.brand}</p>
-                    <button onclick="showDetails('${name.slug}')">Details</button>
-                </div>
-        </div>
-        `;
-
+            <div class="card">
+                <img src="${name.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${name.phone_name}</h5>
+                        <p class="card-text">Brand: ${name.brand}</p>
+                        <button onclick="showDetails('${name.slug}')">Details</button>
+                    </div>
+            </div>
+            `;
         searchResult.appendChild(div);
+
+
+
+
     });
 
 }
@@ -40,14 +44,20 @@ const showDetails = (id) => {
 const showDetailsInner = items => {
     console.log(items);
     const details = document.getElementById('details');
+    document.getElementById('details').textContent = '';
+
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
        
             <img src="${items.image}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${items.name}</h5>
-                    <p class="card-text"><span>Release Date:</span>${items.releaseDate}</p>
+                    <h4 class="card-title">${items.name}</h4>
+                    <p class="card-text"><span >Release Date: </span>${items.releaseDate ? items.releaseDate : 'No release date found'}</p>
+                    <p class="card-text"><span>Storage: </span>${items.mainFeatures.storage}</p>
+                    <p class="card-text"><span>Chip set: </span>${items.mainFeatures.chipSet}</p>
+                    <p class="card-text"><span>Sensors: </span>${items.mainFeatures.sensors.slice(0, 7)}</p>
+                    <p class="card-text"><span>Bluetooth: </span>${items.others.Bluetooth}</p>
                     
                 </div>
         

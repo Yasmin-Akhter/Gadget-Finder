@@ -19,3 +19,12 @@ detail-card-style{
     box-shadow: 3px 3px 3px grey;
     width: 80px;
 }
+span{
+    font-weight: bold;
+}
+.error-msg-style{
+    background-color: rgb(221, 6, 6);
+    color: white;
+    display: none; 
+
+}
